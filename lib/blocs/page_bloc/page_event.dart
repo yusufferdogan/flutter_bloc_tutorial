@@ -6,8 +6,12 @@ abstract class PageEvent extends Equatable {}
 class PageChanged extends PageEvent {
   final BuildContext context;
   final String routeName;
+  final int pageNum;
 
-  PageChanged({@required this.context, @required this.routeName});
+  PageChanged(
+      {@required this.pageNum,
+      @required this.context,
+      @required this.routeName});
 
   @override
   String toString() => 'PageChanged {routeName: $routeName}';

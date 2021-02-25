@@ -1,14 +1,14 @@
-import 'package:bloc_deneme/blocs/page_bloc/page_event.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-abstract class PageState extends Equatable {}
-
-class PagesChanging extends PageState {
+class PageState {
   final int currentPage;
 
-  PagesChanging({@required this.currentPage});
+  PageState({@required this.currentPage});
 
   @override
-  List<Object> get props => [currentPage];
+  String toString() {
+    return '''PageState {
+      pageIndex: $currentPage
+    }''';
+  }
 }
