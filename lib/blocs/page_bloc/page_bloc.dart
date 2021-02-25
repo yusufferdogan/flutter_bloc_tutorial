@@ -9,7 +9,9 @@ class PageBloc extends Bloc<PageEvent, PageState> {
   Stream<PageState> mapEventToState(PageEvent event) async* {
     if (event is PageChanged) {
       Navigator.of(event.context).pushNamed(event.routeName);
-      yield PageState(currentPage: event.pageNum);
+      print(
+          'Stream<PageState> mapEventToState(PageEvent event) async* {${event.pageName}');
+      yield PageState(pageName: event.pageName);
     }
   }
 }

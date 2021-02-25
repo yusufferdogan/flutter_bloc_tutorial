@@ -13,7 +13,7 @@ class Routes {
     FIRST_PAGE_URL: (context) => FirstPage(),
     SECOND_PAGE_URL: (context) => SecondPage(),
   };
-  static final bodyTitle = ["FirstPage", "SecondPage"];
+  static final bodyTitle = ["MainPage", "FirstPage", "SecondPage"];
   static final bodyList = <Widget>[
     FirstPage(),
     SecondPage(),

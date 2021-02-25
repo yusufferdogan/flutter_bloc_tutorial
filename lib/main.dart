@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           create: (context) => CounterBloc(CounterState(counter: 0)),
         ),
         BlocProvider(
-          create: (context) => PageBloc(PageState(currentPage: 0)),
+          create: (context) => PageBloc(PageState(pageName: 'Main Page')),
         ),
       ],
       child: MaterialApp(

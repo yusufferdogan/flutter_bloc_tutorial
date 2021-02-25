@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class PageState {
-  final int currentPage;
+  final String pageName;
 
-  PageState({@required this.currentPage});
+  PageState({@required this.pageName});
 
   @override
   String toString() {
     return '''PageState {
-      pageIndex: $currentPage
+      pageIndex: $pageName
     }''';
   }
 }

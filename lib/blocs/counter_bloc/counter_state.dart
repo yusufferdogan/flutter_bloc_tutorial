@@ -13,6 +13,8 @@ class CounterState {
 //  factory CounterState.decrement() => CounterState._()..counter -= 1;
 
   get getter => counter;
+
+  get currentPage => null;
 }
 
 //class InitialState extends CounterState {

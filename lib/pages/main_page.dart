@@ -15,17 +15,17 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   void _goToFirstPage() {
     BlocProvider.of<PageBloc>(context).add(
-      PageChanged(context: context, routeName: FIRST_PAGE_URL, pageNum: 1),
+      PageChanged(
+          context: context, routeName: FIRST_PAGE_URL, pageName: 'first page'),
     );
   }
 
   void _goToSecondPage() {
     BlocProvider.of<PageBloc>(context).add(
       PageChanged(
-        context: context,
-        routeName: SECOND_PAGE_URL,
-        pageNum: 2,
-      ),
+          context: context,
+          routeName: SECOND_PAGE_URL,
+          pageName: 'second page'),
     );
   }
 
@@ -33,9 +33,10 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return BlocConsumer<PageBloc, PageState>(
       builder: (context, state) {
+        print('number:::::::::::::${state.pageName}');
         return Scaffold(
           appBar: AppBar(
-            title: Text(Routes.bodyTitle[state.currentPage]),
+            title: Text(state.pageName),
           ),
           body: Center(
             child: Column(
@@ -75,7 +76,9 @@ class _MainPageState extends State<MainPage> {
           ),
         );
       },
-      listener: (context, state) {},
+      listener: (context, state) {
+        print('MainPage::::::${state.pageName}');
+      },
     );
   }
 }
