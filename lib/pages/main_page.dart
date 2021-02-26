@@ -1,8 +1,5 @@
 import 'package:bloc_deneme/blocs/page_bloc/bloc.dart';
-import 'package:bloc_deneme/blocs/page_bloc/page_bloc.dart';
-import 'package:bloc_deneme/blocs/page_bloc/page_state.dart';
 import 'package:bloc_deneme/routes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,6 +26,13 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
+  void _goToBooksPage() {
+    BlocProvider.of<PageBloc>(context).add(
+      PageChanged(
+          context: context, routeName: BOOKS_PAGE_URL, pageName: 'BOOKS page'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<PageBloc, PageState>(
@@ -36,7 +40,7 @@ class _MainPageState extends State<MainPage> {
         print('number:::::::::::::${state.pageName}');
         return Scaffold(
           appBar: AppBar(
-            title: Text(state.pageName),
+            title: Text('Main Page'),
           ),
           body: Center(
             child: Column(
@@ -68,6 +72,20 @@ class _MainPageState extends State<MainPage> {
                     onPressed: _goToSecondPage,
                     child: Text(
                       'Go To Second Page',
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                    color: Colors.black,
+                    width: 5,
+                  )),
+                  child: FlatButton(
+                    onPressed: _goToBooksPage,
+                    child: Text(
+                      'Go To Books Page',
                     ),
                   ),
                 ),

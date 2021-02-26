@@ -1,3 +1,4 @@
+import 'package:bloc_deneme/blocs/books_bloc/bloc.dart';
 import 'package:bloc_deneme/blocs/counter_bloc/bloc.dart';
 import 'package:bloc_deneme/blocs/page_bloc/bloc.dart';
 import 'package:bloc_deneme/routes.dart';
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => PageBloc(PageState(pageName: 'Main Page')),
+        ),
+        BlocProvider(
+          create: (context) => BookBloc(BooksInitState())..add(FetchBooks()),
         ),
       ],
       child: MaterialApp(

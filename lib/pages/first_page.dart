@@ -1,7 +1,5 @@
-import 'package:bloc_deneme/blocs/counter_bloc/counter_bloc.dart';
-import 'package:bloc_deneme/blocs/counter_bloc/counter_event.dart';
-import 'package:bloc_deneme/blocs/counter_bloc/counter_state.dart';
 import 'package:bloc_deneme/blocs/page_bloc/bloc.dart';
+import 'package:bloc_deneme/blocs/counter_bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
